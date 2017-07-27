@@ -1,0 +1,64 @@
+
+# Entry 1: dc=ldap,dc=example,dc=com
+dn: dc=ldap,dc=example,dc=com
+dc: ldap
+o: ldap.example.com
+objectclass: top
+objectclass: dcObject
+objectclass: organization
+
+
+# Entry 2: ou=groups,dc=ldap,dc=example,dc=com
+dn: ou=groups,dc=ldap,dc=example,dc=com
+objectclass: organizationalUnit
+objectclass: top
+ou: groups
+
+
+# Entry 3: ou=people,dc=ldap,dc=example,dc=com
+dn: ou=people,dc=ldap,dc=example,dc=com
+objectclass: organizationalUnit
+objectclass: top
+ou: people
+
+# Entry 4: cn=Test.User1,ou=people,dc=ldap,dc=example,dc=com
+dn: cn=Test.User1,ou=people,dc=ldap,dc=example,dc=com
+cn: Test.User1
+displayname: Test User1
+givenname: Test
+mail: Test.User1
+objectclass: inetOrgPerson
+objectclass: organizationalPerson
+objectclass: person
+objectclass: top
+sn: User1
+uid: Test.User1
+userpassword: Test.User1
+
+# Entry 5: cn=Test.User2,ou=people,dc=ldap,dc=example,dc=com
+dn: cn=Test.User2,ou=people,dc=ldap,dc=example,dc=com
+cn: Test.User2
+displayname: Test User2
+givenname: Test
+mail: Test.User2
+objectclass: inetOrgPerson
+objectclass: organizationalPerson
+objectclass: person
+objectclass: top
+sn: User2
+uid: Test.User2
+userpassword: Test.User2
+
+# Entry 6: cn=ViewerInstance,ou=people,dc=ldap,dc=example,dc=com
+dn: cn=1,ou=people,dc=ldap,dc=example,dc=com
+cn: ViewerInstance
+displayname: ViewerInstance
+givenname: ViewerInstance
+mail: ViewerInstance
+objectclass: inetOrgPerson
+objectclass: organizationalPerson
+objectclass: person
+objectclass: top
+sn: ViewerInstance
+uid: 1
+userpassword: 1

@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="#{java201.title}">Java201</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <style>
+        .jumbotron{
+            background-color: #f4ffca;
+        }
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        /* Set a style for all buttons */
+        button {
+            background-color: #24bcff;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: auto;
+        }
+        .cancelbtn {
+            background-color: #f44336;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: auto;
+        }
+
+        .vertical-alignment-helper {
+            display:table;
+            height: 100%;
+            width: 100%;
+        }
+        .vertical-align-center {
+            /* To center vertically */
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .modal {
+            text-align: center;
+            display: none; /* Hidden by default */
+            z-index: 1; /* Sit on top */
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        .modal-dialog{
+            width: 40%
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #ececec;
+            border: 1px solid #bdc3c7;
+            width: 50%;
+            higth: auto;
+            vertical-align: middle;
+            outline-width: 0;
+            margin: 0 auto;
+        }
+    </style>
+
+</head>
+<body>
+<div class="well">
+<div class="container">
+    <nav class="navbar-default navbar-fixed-top">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Java201</a>
+        </div>
+        <ul class="nav navbar-nav" >
+            <div class="container">
+                    <div th:if="${param.error}">
+                        <h3><p class="text-danger" align="center"><strong>Invalid username or password.</strong></p></h3>
+
+                    </div>
+                    <div th:if="${param.logout}">
+                        <h3><p class="text-warning" align="center"><strong>You have been logged out.</strong></p></h3>
+                        <h3></h3>
+                    </div>
+            </div>
+        </ul>
+    <div class="container">
+        <ul class="nav navbar-nav navbar-right">
+            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><span class="glyphicon glyphicon-log-in"></span>LogIn</button>
+        </ul>
+    </div>
+    </nav>
+</div>
+</div>
+
+<div id="id01" class="modal" role="dialog">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center">
+            <form th:action="@{/login}" method="post">
+                    <div class="modal-content" align="center">
+                        <div class="modal-header"></div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Enter User Name" name="username"/>
+                        <input type="password" placeholder="Enter Password" name="password"/>
+                    </div>
+                        <button type="submit"> LogIn </button>
+                        <button onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="header">
+    <div class="container">
+
+    </div>
+</div>
+    <div class="jumbotron">
+
+        <div class="text-center">
+            <div>
+                <h1> </h1>
+            </div>
+            <h1>Welcome to the Java 201 training course.</h1>
+            <h2>To start training You need to be Logged in.</h2>
+            <h2></h2>
+        </div>
+
+    </div>
+<div class="footer">
+    <div class="container" th:background="red">
+
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+/.gradle/
+/bin/
+/build/
+/nbproject/private/
+/.nb-gradle/
+.*
+!.gitignore
+out
+build
